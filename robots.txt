@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://genxpropertiesltd.shop/sitemap.xml

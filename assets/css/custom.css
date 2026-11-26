@@ -1,0 +1,228 @@
+/* GENX PROPERTIES LTD - custom styles (plain CSS, used alongside the Tailwind CDN) */
+
+:root {
+  --navy: #1E3A5F;
+  --navy-800: #182F4D;
+  --brass: #C8963E;
+  --brass-700: #8A6424;
+  --ink: #14202B;
+  --paper: #F6F4EF;
+  --stone-600: #5B626B;
+  --stone-300: #B8BEC6;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+h1, h2, h3 { text-wrap: balance; }
+
+/* Focus states */
+:focus-visible {
+  outline: 3px solid var(--brass);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+main:focus, footer:focus, section:focus { outline: none; }
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--paper);
+  font-weight: 600;
+  transition: top 0.15s ease;
+}
+.skip-link:focus { top: 1rem; }
+
+/* Navigation */
+.nav-link {
+  display: inline-flex;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.nav-link:hover { background: rgba(30, 58, 95, 0.07); color: var(--navy); }
+
+.mobile-link {
+  display: block;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.mobile-link:hover { background: rgba(30, 58, 95, 0.07); }
+
+/* Hero background */
+.hero-bg {
+  background:
+    radial-gradient(60rem 30rem at 100% 0%, rgba(200, 150, 62, 0.14), transparent 60%),
+    radial-gradient(40rem 26rem at 0% 100%, rgba(30, 58, 95, 0.08), transparent 60%),
+    var(--paper);
+}
+
+/* Section headings */
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass-700);
+}
+.eyebrow-dark { color: var(--brass); }
+.eyebrow + h2 { margin-top: 0.75rem; }
+
+.section-title {
+  font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.875rem, 1.4rem + 1.8vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+}
+
+/* Service cards */
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background: #fff;
+  border: 1px solid rgba(30, 58, 95, 0.1);
+  box-shadow: 0 10px 30px -18px rgba(20, 32, 43, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -20px rgba(20, 32, 43, 0.45);
+}
+.card-title {
+  margin-top: 1.5rem;
+  font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.card-text {
+  margin-top: 0.75rem;
+  line-height: 1.7;
+  color: var(--stone-600);
+}
+
+.icon-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 1rem;
+  background: var(--navy);
+  color: var(--brass);
+}
+
+/* Key facts */
+.fact {
+  padding: 1.75rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid var(--brass);
+}
+.fact-value {
+  font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--paper);
+}
+.fact-label {
+  margin-top: 0.5rem;
+  line-height: 1.6;
+  color: var(--stone-300);
+}
+
+/* Footer */
+.footer-link {
+  color: var(--stone-300);
+  transition: color 0.15s ease;
+}
+.footer-link:hover { color: var(--paper); }
+
+/* Legal dialogs */
+.legal-dialog {
+  width: min(42rem, calc(100% - 2rem));
+  max-height: min(85vh, 52rem);
+  padding: 0;
+  border: 0;
+  border-radius: 1.25rem;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 30px 80px -20px rgba(20, 32, 43, 0.6);
+  overflow: hidden;
+}
+.legal-dialog::backdrop {
+  background: rgba(20, 32, 43, 0.72);
+  backdrop-filter: blur(2px);
+}
+.legal-inner {
+  display: flex;
+  flex-direction: column;
+  max-height: min(85vh, 52rem);
+}
+.legal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid rgba(30, 58, 95, 0.12);
+  background: var(--paper);
+}
+.legal-body {
+  overflow-y: auto;
+  padding: 1.25rem 1.5rem 1.75rem;
+  line-height: 1.7;
+  color: #2b3640;
+}
+.legal-body h3 {
+  margin-top: 1.4rem;
+  font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  color: var(--navy);
+}
+.legal-body p + p { margin-top: 0.5rem; }
+.legal-body h3 + p { margin-top: 0.35rem; }
+.legal-body a {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  color: var(--navy);
+}
+.close-btn:hover { background: rgba(30, 58, 95, 0.08); }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .card:hover { transform: none; }
+}
